@@ -30,4 +30,10 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Test Change
+## Bootstrap Details
+Currently Installed : "bootstrap": "^4.0.0-alpha.6"
+Originally Installed: "bootstrap":"^3.3.7"
+
+Both work but bootstrap 4 no longer has Headers
+
+Visit https://valor-software.com/ng2-bootstrap for more info and documentation.
