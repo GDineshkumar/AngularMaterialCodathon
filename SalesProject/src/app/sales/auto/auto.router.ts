@@ -6,5 +6,7 @@ export const AutoRoutes: Route[] = [
   {
     path: 'auto',
     component: AutoComponent,
+    children: [
+      ...PersonlInfoRoute],
   }
 ];

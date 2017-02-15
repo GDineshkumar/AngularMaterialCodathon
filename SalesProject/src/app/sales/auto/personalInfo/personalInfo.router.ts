@@ -7,5 +7,6 @@ export const PersonlInfoRoute: Route[] = [
     {
       path: 'personalInfo',
       component: PersonalInfoComponent,
+      outlet : 'autoFlow'
     }
 ];
