@@ -2,14 +2,7 @@
   padding:50px;
 }
 
-.mat-slider-thumb-label-text{
-
-  font-size: 26px;
-
-}
-
-.slider-width {
-
+.slider {
   width: 500px;
-
+  cursor:pointer;
 }

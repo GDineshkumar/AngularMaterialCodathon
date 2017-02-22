@@ -1,24 +1,19 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-target-premium',
   templateUrl: 'target-premium.component.html',
   styleUrls: ['target-premium.component.css']
 })
-export class TargetPremiumComponent implements OnInit {
+export class TargetPremiumComponent {
 
-  constructor() { }
+  sliderValue: number;
 
-  ngOnInit() {
+  onChanged(event) {
+
+    this.sliderValue = event.value;
+    console.log("Changed To: " + this.sliderValue);
+
   }
-
-  targetPremiumDispValue = 100;
- // @Input() value;
- //
- //  valueChanged(){
- //
- //
- //
- //  }
 
 }

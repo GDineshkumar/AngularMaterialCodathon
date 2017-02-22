@@ -12,18 +12,15 @@
       <!-- Target Premium Card -->
       <md-card>
         <md-card-content>
-
           <div class="container">
-
             <div class="row">
               <!-- Slider For User to Select Premium -->
-              <md-slider class="slider-width" tickInterval="1" ></md-slider>
+              <md-slider class="slider" (change)="onChanged($event)"></md-slider>
             </div>
 
-            <!--[ngModel]="value" (ngModelChange)="valueChanged($event)"-->
             <div class="row">
               <h1>
-                ${{targetPremiumDispValue}}
+                ${{sliderValue}}
               </h1>
             </div>
 
