@@ -1,5 +1,17 @@
 <sales-topnavigaton></sales-topnavigaton>
-
+ 
+ <div class="container">
+	<div class="row">
+		<ul class="breadcrumb">
+			<li class="completed"><a [routerLink]="['/sales','auto', {outlets: {'autoFlow': ['personalInfo']}}]">Personal Info</a></li>
+			<li class="active"><a [routerLink]="['/sales','auto', {outlets: {'autoFlow': ['vehicles']}}]">Vehicles</a></li>
+			<li><a href="">Drivers</a></li>
+			<li><a href="">Discounts</a></li>
+			<li><a [routerLink]="['/sales','auto', {outlets: {'autoFlow': ['quote']}}]">Quote</a></li>
+			<li><a href="">Purchase Insurance</a></li>
+		</ul>
+	</div>
+</div>
 <router-outlet></router-outlet>
 
 

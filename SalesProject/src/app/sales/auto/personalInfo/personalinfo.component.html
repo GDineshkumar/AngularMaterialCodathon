@@ -1,93 +1,100 @@
-<form class="form-horizontal">
-<fieldset>
+<form class="form-horizontal" >
+	<fieldset>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="firstName">First
+				Name</label>
+			<div class="col-md-4">
+				<input id="firstName" name="firstName" type="text"
+				[(ngModel)] ="personalinfodataService.firstName"
+					placeholder="First Name" class="form-control" required>
 
-<!-- Form Name -->
-<legend>Lets Talk About you!</legend>
+			</div>
+		</div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="firstName">First Name</label>  
-  <div class="col-md-4">
-  <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md" required="">
-    
-  </div>
-</div>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="lastName">Last Name</label>
+			<div class="col-md-4">
+				<input id="lastName" name="lastName" type="text" [(ngModel)] ="personalinfodataService.lastName"
+					placeholder="Last Name" class="form-control" required="">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="lastName">Last Name</label>  
-  <div class="col-md-4">
-  <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md" required="">
-    
-  </div>
-</div>
+			</div>
+		</div>
 
-<!-- Text input-->
+		<!-- Text input-->
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="dateOfBirth">Date of Birth</label>  
-  <div class="col-md-3">
-  <div class='input-group date' id='datetimepicker1'>
-  <input id="dateOfBirth" name="dateOfBirth" type="text" class="form-control input-md" required="">
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
-    </div>
-  </div>
-</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="dateOfBirth">Date of
+				Birth</label>
+			<div class="col-md-4">
+				<div class='input-group date' id='datetimepicker1'>
+					<input id="dateOfBirth" name="dateOfBirth" type="text"
+						[(ngModel)] ="personalinfodataService.dateOfBirth"  class="form-control" required="">
+					<div class="input-group-addon">
+						<span class="glyphicon glyphicon-th"></span>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="street">Street</label>  
-  <div class="col-md-4">
-  <input id="street" name="street" type="text" placeholder="Street" class="form-control input-md" required="">
-    
-  </div>
-</div>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="street">Street</label>
+			<div class="col-md-4">
+				<input id="street" [(ngModel)] ="personalinfodataService.street" name="street" type="text" placeholder="Street" 
+					class="form-control" required="">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="aptOrSuite">Apt/Suite</label>  
-  <div class="col-md-4">
-  <input id="aptOrSuite" name="aptOrSuite" type="text" placeholder="Apt/Suite" class="form-control input-md" required="">
-    
-  </div>
-</div>
+			</div>
+		</div>
 
-<!-- Search input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="state">State</label>
-  <div class="col-md-4">
-    <input id="state" name="state" type="search" placeholder="State" class="form-control input-md" required="">
-    
-  </div>
-</div>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="aptOrSuite">Apt/Suite</label>
+			<div class="col-md-4">
+				<input id="aptOrSuite" name="aptOrSuite" type="text"
+					[(ngModel)] ="personalinfodataService.aptOrSuite" placeholder="Apt/Suite" class="form-control" required="">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="city">City</label>  
-  <div class="col-md-4">
-  <input id="city" name="city" type="text" placeholder="City" class="form-control input-md" required="">
-    
-  </div>
-</div>
+			</div>
+		</div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="zipCode">Zip Code</label>  
-  <div class="col-md-4">
-  <input id="zipCode" name="zipCode" type="text" placeholder="Zip Code" class="form-control input-md" required="">
-    
-  </div>
-</div>
+		<!-- Search input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="state">State</label>
+			<div class="col-md-4">
+				<input id="state" name="state" type="text" placeholder="State"
+					[(ngModel)] ="personalinfodataService.state" class="form-control" required="">
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
-  </div>
-</div>
+			</div>
+		</div>
 
-</fieldset>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="city">City</label>
+			<div class="col-md-4">
+				<input id="city" name="city" type="text" placeholder="City"
+					[(ngModel)] ="personalinfodataService.city" class="form-control" required="">
+
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="zipCode">Zip Code</label>
+			<div class="col-md-4">
+				<input id="zipCode" name="zipCode" type="text"
+					[(ngModel)] ="personalinfodataService.zipCode" placeholder="Zip Code" class="form-control" required="">
+
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="submit"></label>
+			<div class="col-md-4">
+				<button id="submit" name="submit" (click)="clicked()" class="btn btn-primary" [routerLink]="['/sales','auto']">Submit</button>
+			</div>
+		</div>
+
+	</fieldset>
 </form>

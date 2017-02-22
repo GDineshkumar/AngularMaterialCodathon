@@ -5,8 +5,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { routes } from './app.routes'
+import { AutosalesdataService } from './sales/auto/autosalesdata.service';
+import { PersonalinfodataService } from './sales/auto/personalInfo/personalinfodata.service';
 import { SalesComponent } from './sales/sales.component';
-import { SalesModule } from './sales/sales.module'
+import { SalesModule } from './sales/sales.module';
 import { Salesroutes } from './sales/sales.route';
 import { TopnavigatonComponent } from './shared/topnavigaton/topnavigaton.component';
 import { RouterModule } from '@angular/router';
@@ -21,7 +23,7 @@ import { RouterModule } from '@angular/router';
     HttpModule,
     SalesModule
   ],
-  providers: [],
+  providers : [PersonalinfodataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
