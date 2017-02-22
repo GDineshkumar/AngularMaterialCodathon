@@ -5,16 +5,16 @@
 
     <!-- FIRST NAME INPUT -->
     <md-input-container>
-      <input mdInput placeholder="First Name">
+      <input mdInput placeholder="First Name" [(ngModel)] ="personalinfo.firstName">
     </md-input-container>
     <!-- LAST NAME INPUT -->
     <md-input-container>
-      <input mdInput placeholder="Last Name">
+      <input mdInput placeholder="Last Name" [(ngModel)] ="personalinfo.lastName">
     </md-input-container>
 
   </md-card-content>
   <md-card-actions>
-    <button md-button>BACK</button>
-    <button md-button style="float: right;">NEXT</button>
+    <button  md-raised-button color="primary">BACK</button>
+    <button  md-raised-button color="primary" style="float: right;">NEXT</button>
   </md-card-actions>
 </md-card>

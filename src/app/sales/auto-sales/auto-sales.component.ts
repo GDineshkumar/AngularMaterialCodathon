@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-auto-sales',
@@ -22,5 +22,7 @@ export class AutoSalesComponent {
     {label: "Get Your Quote", link: ['quote-summary']}
 
   ];
+
+
 
 }

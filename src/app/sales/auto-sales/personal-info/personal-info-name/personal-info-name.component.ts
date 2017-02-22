@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Personalinfo} from '../personInfo'
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-personal-info-name',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalInfoNameComponent implements OnInit {
 
-  constructor() { }
+  personalinfo: Personalinfo;
+
+  constructor(personalinfo: Personalinfo) {
+    this.personalinfo = personalinfo;
+  }
 
   ngOnInit() {
   }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalInfoHistoryComponent implements OnInit {
 
-  constructor() { }
+  personalInfoHistory:PersonalInfoHistory;
 
   ngOnInit() {
   }

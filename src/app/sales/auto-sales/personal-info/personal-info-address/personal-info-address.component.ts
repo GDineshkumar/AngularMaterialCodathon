@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './personal-info-address.component.html',
   styles: []
 })
-export class PersonalInfoAddressComponent implements OnInit {
+export class PersonalInfoAddressComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

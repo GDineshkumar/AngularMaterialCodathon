@@ -12,14 +12,14 @@ export class VehiclesComponent {
    *
    * Create Mock Vehicle Data
    *
-   * @type {[{make: string; model: string; year: string; vin: string; premium: number},{make: string; model: string; year: string; vin: string; premium: number},{make: string; model: string; year: string; vin: string; premium: number},{make: string; model: string; year: string; vin: string; premium: number}]}
    */
+
   @Input() vehicles: Vehicle[] = [
 
-    {make: "Volkswagen", model: "GTI", year: "1995", vin: "VWW64634HKJHK987", premium: 30},
-    {make: "Honda", model: "Civic", year: "2001", vin: "HDW64634HKJHK987", premium: 20},
-    {make: "Ford", model: "Tundra", year: "2010", vin: "FDW64634HKJHK987", premium: 25},
-    {make: "Toyota", model: "Highmander", year: "2004", vin: "TYW64634HKJHK987", premium: 19},
+    new Vehicle("Volkswagen", "GTI", "1995", "VWW64634HKJHK987", 30),
+    new Vehicle("Honda", "Civic", "2001", "HDW64634HKJHK987", 20),
+    new Vehicle("Ford", "Tundra", "2010", "FDW64634HKJHK987", 25),
+    new Vehicle("Toyota", "Highlander", "2004", "TYW64634HKJHK987", 19)
 
   ];
 
@@ -32,10 +32,7 @@ export class VehiclesComponent {
    */
 
   onAddVehicle(vehicle) {
-
     console.log("Clicked: " + vehicle.vin);
-
   }
-
 
 }

@@ -7,6 +7,9 @@ import {RouterModule} from "@angular/router";
 import {AutoSalesComponent} from "./auto-sales.component";
 import {MaterialModule} from "@angular/material";
 import {PersonalInfoModule} from "./personal-info/personal-info.module";
+import {AutoSalesNavService} from "./auto-sales-nav.service";
+import {AutoDataService} from "./autoDataService";
+import {Auto} from "./auto";
 
 @NgModule({
   imports: [
@@ -20,7 +23,8 @@ import {PersonalInfoModule} from "./personal-info/personal-info.module";
     TargetPremiumComponent,
     QuoteSummaryComponent,
     VehiclesComponent
-  ]
+  ],
+  providers:[Auto, AutoDataService, AutoSalesNavService]
 })
 export class AutoSalesModule {
 }
