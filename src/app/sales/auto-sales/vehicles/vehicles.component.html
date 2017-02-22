@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row text-center desc-padding">
+    <h4>
+      Select The Vehicles You Would Like To Add To Your Policy
+    </h4>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-6 col-md-4 col-md-offset-4">
+
+      <md-list>
+        <md-list-item *ngFor="let vehicle of vehicles" (click)="onAddVehicle(vehicle)" class="list-item" >
+          <md-card-title md-line> {{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</md-card-title>
+          <md-card-subtitle md-line>
+            <span> +${{vehicle.premium}} to Premium</span>
+          </md-card-subtitle>
+        </md-list-item>
+
+      </md-list>
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-8">
+
+
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row text-center desc-padding">
+    <h4>
+      Select Your Target Premium To Help Us Choose The Right Plan For You
+    </h4>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-6 col-md-offset-3">
+
+      <!-- Target Premium Card -->
+      <md-card>
+        <md-card-content>
+          <div class="container">
+            <div class="row">
+              <!-- Slider For User to Select Premium -->
+              <md-slider class="slider" (change)="onChanged($event)"></md-slider>
+            </div>
+
+            <div class="row">
+              <h1>
+                ${{sliderValue}}
+              </h1>
+            </div>
+
+          </div>
+
+
+        </md-card-content>
+        <md-card-actions >
+          <button md-button>LETS GO</button>
+        </md-card-actions>
+      </md-card>
+
+
+    </div>
+  </div>
+
+</div>

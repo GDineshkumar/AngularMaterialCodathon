@@ -1,0 +1,15 @@
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     [routerLink]="['/sales', 'auto']"
+     routerLinkActive #srla="routerLinkActive"
+     [active]="srla.isActive">
+    AUTO QUOTE
+  </a>
+  <a md-tab-link
+     [routerLink]="['/sales', 'home']"
+     routerLinkActive #srla="routerLinkActive"
+     [active]="srla.isActive">
+    HOME QUOTE
+  </a>
+</nav>
+<router-outlet></router-outlet>
