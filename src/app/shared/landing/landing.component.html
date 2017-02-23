@@ -1,0 +1,20 @@
+<md-card style="padding: 80px; text-align: center;">
+  <md-card-subtitle style="padding:25px;">Start Your Quote</md-card-subtitle>
+  <md-card-content>
+
+    <md-input-container>
+      <input mdInput placeholder="Zip" [(ngModel)]="personalInfo.zip">
+    </md-input-container>
+
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button
+            color="primary"
+            style="float:right;"
+            (click)="onClicked()">
+    START YOUR QUOTE
+    </button>
+  </md-card-actions>
+</md-card>
+
+<div class="footer-box text-center">&copy; 2017 The Hartford Insurance</div>
