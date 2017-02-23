@@ -8,7 +8,7 @@ export class AutoDataService {
   constructor(private http: Http) {
   }
 
-  sendData(personalInfo: PersonalInfo) {
+  getAccidentHistory(personalInfo: PersonalInfo) {
     const body = JSON.stringify(personalInfo);
     console.log("request ::" + body);
     const headers = new Headers();

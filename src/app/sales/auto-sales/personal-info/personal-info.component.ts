@@ -22,12 +22,6 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.autosalesdataService.getUserInfo().subscribe(
-      (data: Response) => {
-        console.log('data from :serice' + data.json().firstName);
-        this.personalInfo.firstName = data.json().firstName;
-      }
-    );
   }
 
 

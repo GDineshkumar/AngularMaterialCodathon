@@ -1,6 +1,8 @@
-import {Component, Inject} from '@angular/core';
-import {AutoSalesNavService} from "../../auto-sales-nav.service";
-import {PersonalInfo} from "../personal-info";
+import { Component, Inject } from '@angular/core';
+import { AutoSalesNavService } from "../../auto-sales-nav.service";
+import { AutoDataService } from '../../autoDataService'
+import { PersonalInfo } from "../personal-info";
+import { Response } from '@angular/http'
 
 
 @Component({
@@ -11,9 +13,12 @@ import {PersonalInfo} from "../personal-info";
 export class PersonalInfoAddressComponent {
 
   personalInfo: PersonalInfo;
+  autoDataService: AutoDataService;
 
-  constructor(@Inject(PersonalInfo) personalInfo, @Inject(AutoSalesNavService)private navService) {
+  constructor( @Inject(PersonalInfo) personalInfo, 
+    @Inject(AutoSalesNavService) private navService, @Inject(AutoDataService) autoDataService) {
     this.personalInfo = personalInfo;
+    this.autoDataService = autoDataService;
   }
 
   /**
@@ -23,6 +28,11 @@ export class PersonalInfoAddressComponent {
    */
 
   onNextClicked() {
+    this.autoDataService.getAccidentHistory(this.personalInfo).subscribe(
+    (data: Response) => {
+        console.log('data from :serice' + data.json());
+        this.personalInfo.numAccidents = data.json();
+      });
     this.navService.goToView(3);
   }
 

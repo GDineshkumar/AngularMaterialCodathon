@@ -1,5 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {AutoSalesNavService} from "../../auto-sales-nav.service";
+import { AutoDataService } from '../../autoDataService'
 import {PersonalInfo} from "../personal-info";
 
 @Component({
@@ -10,9 +11,12 @@ import {PersonalInfo} from "../personal-info";
 export class PersonalInfoHistoryComponent {
 
   personalInfo: PersonalInfo;
+  autoDataService: AutoDataService;
 
-  constructor(@Inject(PersonalInfo) personalInfo, @Inject(AutoSalesNavService)private navService) {
+  constructor(@Inject(PersonalInfo) personalInfo,
+     @Inject(AutoSalesNavService)private navService, @Inject(AutoDataService) autoDataService) {
     this.personalInfo = personalInfo;
+     this.autoDataService  = autoDataService;
   }
 
   /**
@@ -22,6 +26,7 @@ export class PersonalInfoHistoryComponent {
    */
 
   onNextClicked() {
+   
     this.navService.goToView(4)
   }
 
