@@ -16,10 +16,10 @@ export class AutoSalesComponent {
 
   tabData = [
 
-    {label: "Target Premium", link: ['target-premium']},
-    {label: "Personal Info", link: ['personal-info']},
-    {label: "Vehicles", link: ['vehicles']},
-    {label: "Get Your Quote", link: ['quote-summary']}
+    {label: "Target Premium", link: ['/sales', 'auto', 'target-premium']},
+    {label: "Personal Info", link: ['/sales', 'auto', 'personal-info']},
+    {label: "Vehicles", link: ['/sales', 'auto', 'vehicles']},
+    {label: "Get Your Quote", link: ['/sales', 'auto', 'quote-summary']}
 
   ];
 
