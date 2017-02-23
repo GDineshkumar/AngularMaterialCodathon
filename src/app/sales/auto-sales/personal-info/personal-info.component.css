@@ -18,3 +18,9 @@ a:active  {
   /* Applies to activated links */
   text-decoration:  none;
 }
+
+.personal-info-box{
+
+  padding:10%;
+
+}

@@ -5,7 +5,7 @@ import {PersonalInfo} from "../personal-info";
 @Component({
   selector: 'sales-auto-personal-info-history',
   templateUrl: './personal-info-history.component.html',
-  styles: []
+  styleUrls: ['../personal-info.component.css']
 })
 export class PersonalInfoHistoryComponent {
 
