@@ -3,6 +3,7 @@ import {AutoDataService} from "../autoDataService";
 import {Auto} from "../auto";
 import {PersonalInfo} from "./personal-info";
 import {Response} from "@angular/http";
+import {TargetPremium} from "../target-premium/target-premium";
 
 @Component({
   selector: 'sales-auto-personal-info',
@@ -14,24 +15,21 @@ export class PersonalInfoComponent implements OnInit {
   personalInfo: PersonalInfo;
   auto: Auto;
   autosalesdataService: AutoDataService;
+  targetPremium:TargetPremium;
 
-  constructor(personalInfo: PersonalInfo, auto: Auto, autosalesdataService: AutoDataService) {
+  constructor(targetPremium:TargetPremium, personalInfo: PersonalInfo, auto: Auto, autosalesdataService: AutoDataService) {
     this.personalInfo = personalInfo;
     this.auto = auto;
     this.autosalesdataService = autosalesdataService;
+    this.targetPremium = targetPremium;
   }
 
   ngOnInit() {
   }
 
-
-  // clicked() {
-  //   console.log(this.auto.personalinfo);
-  //   console.log(this.personalinfo);
-  //   this.auto.personalinfo = this.personalinfo;
-  //   this.autosalesdataService.sendData(this.auto.personalinfo)
-  //     .subscribe();
-  // }
+  numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
   /**
    *

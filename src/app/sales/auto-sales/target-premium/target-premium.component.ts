@@ -11,7 +11,7 @@ import {PersonalInfo} from "../personal-info/personal-info";
 export class TargetPremiumComponent {
 
   targetPremium: TargetPremium;
-  percentChange:number;
+  percentChange: number;
 
   constructor(@Inject(TargetPremium) targetPremium, @Inject(AutoSalesNavService) private navService) {
     this.targetPremium = targetPremium;
@@ -58,7 +58,7 @@ export class TargetPremiumComponent {
     this.targetPremium.propertyCoverageValue = this.toPercentage(this.targetPremium.propertyCoverageValueMax, this.percentChange);
 
     // Handle Deductible Value
-    this.targetPremium.deductibleValue = this.toPercentage(this.targetPremium.deductibleValueMax, this.percentChange);
+    this.targetPremium.deductibleValue = this.targetPremium.deductibleValueMax - this.toPercentage(this.targetPremium.deductibleValueMax, this.percentChange);
 
   }
 
@@ -68,10 +68,12 @@ export class TargetPremiumComponent {
    *
    */
 
-  toPercentage(max:number, value:number){
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
-    return max * value;
-
+  toPercentage(max: number, value: number) {
+    return Math.round(max * value);
   }
 
   /**
@@ -80,9 +82,9 @@ export class TargetPremiumComponent {
    *
    */
 
-  getPercentChange(max:number, value:number){
+  getPercentChange(max: number, value: number) {
 
-      return value / max;
+    return value / max;
 
   }
 

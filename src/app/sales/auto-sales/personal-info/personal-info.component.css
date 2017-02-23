@@ -1,5 +1,13 @@
 .desc-padding{
-  padding:50px;
+  padding:30px;
+}
+
+.sub-header-nav {
+
+  background-color: #FFFFFF;
+  color: #212121;
+  font-size: larger;
+
 }
 
 a:link    {

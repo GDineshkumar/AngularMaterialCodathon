@@ -1,6 +1,7 @@
 import {Component, Input, Inject} from '@angular/core';
 import {Vehicle} from "./vehicle";
 import {AutoSalesNavService} from "../auto-sales-nav.service";
+import {TargetPremium} from "../target-premium/target-premium";
 
 @Component({
   selector: 'sales-auto-vehicles',
@@ -9,8 +10,22 @@ import {AutoSalesNavService} from "../auto-sales-nav.service";
 })
 export class VehiclesComponent {
 
-  constructor(@Inject(AutoSalesNavService)private navService){
+  targetPremium:TargetPremium;
 
+  constructor(@Inject(TargetPremium) targetPremium, @Inject(AutoSalesNavService)private navService){
+    this.targetPremium = targetPremium;
+  }
+
+  /**
+   *
+   * Style with commas
+   *
+   * @param x
+   * @returns {string|any|void}
+   */
+
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   /**

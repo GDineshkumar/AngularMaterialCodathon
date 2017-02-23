@@ -13,14 +13,14 @@ export class AutoDataService {
     console.log("request ::" + body);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:8080/save', body, {
+    return this.http.post('http://10.146.199.145:8080/save', body, {
       headers: headers
     });
   }
 
 
   getUserInfo() {
-    return this.http.get('http://localhost:8080/data');
+    return this.http.get('http://10.146.199.145:8080/data');
   }
 
 }

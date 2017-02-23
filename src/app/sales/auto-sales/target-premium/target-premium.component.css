@@ -13,3 +13,13 @@
   float:right;
 
 }
+
+.coverage-value-color{
+  color: #212121;
+}
+
+.sub-header-nav {
+  background-color: #FFFFFF;
+  color: #212121;
+  font-size: larger;
+}

@@ -1,3 +1,10 @@
 .example-fill-remaining-space {
   flex: 1 1 auto;
 }
+
+.logo-image{
+
+  width:20%; /* you can use % */
+  height: auto;
+
+}

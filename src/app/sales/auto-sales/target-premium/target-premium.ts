@@ -16,5 +16,14 @@ export class TargetPremium {
   deductibleValueMin: number;
   deductibleValueMax: number;
 
+  constructor(){
+
+    // Set Initial Values to Zero
+    this.premiumValue = 0;
+    this.medicalCoverageValue = 0;
+    this.propertyCoverageValue = 0;
+    this.deductibleValue = 1000;
+
+  }
 
 }

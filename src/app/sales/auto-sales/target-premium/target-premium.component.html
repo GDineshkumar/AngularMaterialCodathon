@@ -1,11 +1,30 @@
 <div class="container">
 
-  <div class="row text-center desc-padding">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="sub-header-nav" style="float: left;">
+        <h3>
+          Target Your Premium
+        </h3>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="sub-header-nav" style="float: right; text-align: right;">
+        <h1>
+          ${{numberWithCommas(targetPremium.premiumValue)}}
+          <md-card-subtitle>Estimated Premium</md-card-subtitle>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<!--  <div class="row text-center desc-padding">
     <md-card-subtitle>
       Select your target premium
     </md-card-subtitle>
 
-  </div>
+  </div>-->
 
   <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
@@ -16,7 +35,7 @@
           <div class="container">
             <div class="row">
               <h1>
-                ${{targetPremium.premiumValue}}<md-card-subtitle>per month</md-card-subtitle>
+                ${{numberWithCommas(targetPremium.premiumValue)}}<md-card-subtitle>per month</md-card-subtitle>
               </h1>
             </div>
             <div class="row">
@@ -30,18 +49,18 @@
               <br><br>
 
               <!-- MEDICAL COVERAGE SLIDER -->
-              <md-card-subtitle>Medical Coverage <md-card-title>{{"$"+targetPremium.medicalCoverageValue}} </md-card-title></md-card-subtitle>
+              <md-card-subtitle>Medical Coverage <md-card-title class="coverage-value-color">{{"$"+numberWithCommas(targetPremium.medicalCoverageValue)}} </md-card-title></md-card-subtitle>
               <md-slider class="slider" [min]="targetPremium.medicalCoverageValueMin" [max]="targetPremium.medicalCoverageValueMax" [(ngModel)]="targetPremium.medicalCoverageValue"></md-slider>
               <br>
 
               <!-- PROPERTY COVERAGE SLIDER -->
-              <md-card-subtitle>Property Coverage <md-card-title>{{"$"+targetPremium.propertyCoverageValue}}</md-card-title></md-card-subtitle>
+              <md-card-subtitle>Property Coverage <md-card-title class="coverage-value-color">{{"$"+numberWithCommas(targetPremium.propertyCoverageValue)}}</md-card-title></md-card-subtitle>
               <md-slider class="slider" [min]="targetPremium.propertyCoverageValueMin" [max]="targetPremium.propertyCoverageValueMax" [(ngModel)]="targetPremium.propertyCoverageValue"></md-slider>
               <br>
 
               <!-- DEDUCTIBLE AMOUNT SLIDER -->
-              <md-card-subtitle>Deductible <md-card-title>{{"$"+targetPremium.deductibleValue}}</md-card-title></md-card-subtitle>
-              <md-slider class="slider" [invert]="true" [min]="targetPremium.deductibleValueMin" [max]="targetPremium.deductibleValueMax" [(ngModel)]="targetPremium.deductibleValue"></md-slider>
+              <md-card-subtitle>Deductible <md-card-title class="coverage-value-color">{{"$"+numberWithCommas(targetPremium.deductibleValue)}}</md-card-title></md-card-subtitle>
+              <md-slider class="slider" [min]="targetPremium.deductibleValueMin" [max]="targetPremium.deductibleValueMax" [(ngModel)]="targetPremium.deductibleValue"></md-slider>
             </div>
 
           </div>
