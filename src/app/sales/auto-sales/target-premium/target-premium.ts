@@ -4,5 +4,8 @@ import {Injectable} from "@angular/core";
 export class TargetPremium {
 
   premiumValue: number;
+  medicalCoverageValue: number;
+  propertyCoverageValue: number;
+  collisionCoverageValue: number;
 
 }

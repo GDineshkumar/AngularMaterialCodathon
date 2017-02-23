@@ -1,12 +1,10 @@
 <div class="container">
 
   <div class="row text-center desc-padding">
-    <md-card-title>
-      Select Your Target Premium
-    </md-card-title>
     <md-card-subtitle>
-      This will help us find the right plan for you
+      Select your target premium
     </md-card-subtitle>
+
   </div>
 
   <div class="row">
@@ -20,11 +18,22 @@
               <!-- Slider For User to Select Premium -->
               <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
             </div>
+            <div class="row">
+              <br><br><br>
+              <md-card-subtitle>Medical Coverage</md-card-subtitle>
+              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
+              <br>
+              <md-card-subtitle>Property Coverage</md-card-subtitle>
+              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
+              <br>
+              <md-card-subtitle>Deductible</md-card-subtitle>
+              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
+            </div>
             <!--(change)="onChanged($event)"-->
 
             <div class="row">
               <h1>
-                ${{targetPremium.premiumValue}}
+                ${{targetPremium.premiumValue}}<md-card-subtitle>per month</md-card-subtitle>
               </h1>
             </div>
 
