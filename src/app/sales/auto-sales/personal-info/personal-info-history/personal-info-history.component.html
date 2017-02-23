@@ -5,12 +5,12 @@
     <md-input-container>
 
       <!-- ACCIDENT INPUT -->
-      <input mdInput placeholder="Number of Accidents">
+      <input type="number" mdInput [(ngModel)]="personalInfo.numAccidents" placeholder="Number of Accidents">
 
     </md-input-container>
   </md-card-content>
   <md-card-actions>
-    <button md-button>BACK</button>
-    <button md-button>NEXT</button>
+    <button md-raised-button (click)="onBackClicked()">BACK</button>
+    <button md-raised-button color="primary" style="float: right;" (click)="onNextClicked()">NEXT</button>
   </md-card-actions>
 </md-card>

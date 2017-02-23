@@ -1,15 +1,15 @@
-import { Personalinfo } from './personal-info/personInfo'
+import { PersonalInfo } from './personal-info/personal-info'
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 @Injectable()
 export class AutoDataService {
-  constructor(private http: Http) {
 
+  constructor(private http: Http) {
   }
 
-  sendData(personalinfo: Personalinfo) {
-    const body = JSON.stringify(personalinfo);
+  sendData(personalInfo: PersonalInfo) {
+    const body = JSON.stringify(personalInfo);
     console.log("request ::" + body);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');

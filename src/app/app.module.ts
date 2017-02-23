@@ -7,6 +7,8 @@ import {APP_ROUTING} from "./app.routing";
 import {RouterModule} from "@angular/router";
 import {MaterialModule} from "@angular/material";
 import {SalesModule} from "./sales/sales.module";
+import { NavButtonsComponent } from './shared/nav-buttons/nav-buttons.component';
+import {NavButtonsModule} from "./shared/nav-buttons/nav-buttons.module";
 
 @NgModule({
   declarations: [

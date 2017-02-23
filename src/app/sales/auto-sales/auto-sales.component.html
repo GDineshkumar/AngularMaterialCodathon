@@ -1,5 +1,5 @@
 <nav md-tab-nav-bar md-center-tabs="true">
-  <a md-tab-link
+  <a  md-tab-link
      *ngFor="let tab of tabData"
      [routerLink]="tab.link"
      routerLinkActive #rla="routerLinkActive"
@@ -8,3 +8,20 @@
   </a>
 </nav>
 <router-outlet></router-outlet>
+
+<!--<md-tab-group>
+  <md-tab label="Target Premium">
+    <sales-auto-target-premium></sales-auto-target-premium>
+  </md-tab>
+  <md-tab label="Personal Info">
+    <sales-auto-personal-info></sales-auto-personal-info>
+  </md-tab>
+  <md-tab label="Vehicles">
+    <sales-auto-vehicles></sales-auto-vehicles>
+  </md-tab>
+  <md-tab label="Quote Summary">
+    <sales-auto-quote-summary></sales-auto-quote-summary>
+  </md-tab>
+</md-tab-group>-->
+
+

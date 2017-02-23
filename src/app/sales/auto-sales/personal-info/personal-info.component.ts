@@ -1,22 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {AutoDataService} from "../autoDataService";
 import {Auto} from "../auto";
-import {Personalinfo} from "./personInfo";
+import {PersonalInfo} from "./personal-info";
 import {Response} from "@angular/http";
 
 @Component({
-  selector: 'app-personal-info',
+  selector: 'sales-auto-personal-info',
   templateUrl: 'personal-info.component.html',
   styleUrls: ['personal-info.component.css']
 })
 export class PersonalInfoComponent implements OnInit {
 
-  personalinfo: Personalinfo;
+  personalInfo: PersonalInfo;
   auto: Auto;
   autosalesdataService: AutoDataService;
 
-  constructor(personalinfo: Personalinfo, auto: Auto, autosalesdataService: AutoDataService) {
-    this.personalinfo = personalinfo;
+  constructor(personalInfo: PersonalInfo, auto: Auto, autosalesdataService: AutoDataService) {
+    this.personalInfo = personalInfo;
     this.auto = auto;
     this.autosalesdataService = autosalesdataService;
   }
@@ -25,7 +25,7 @@ export class PersonalInfoComponent implements OnInit {
     this.autosalesdataService.getUserInfo().subscribe(
       (data: Response) => {
         console.log('data from :serice' + data.json().firstName);
-        this.personalinfo.firstName = data.json().firstName;
+        this.personalInfo.firstName = data.json().firstName;
       }
     );
   }

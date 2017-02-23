@@ -1,16 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {AutoSalesNavService} from "../auto-sales-nav.service";
+import {TargetPremium} from "./target-premium";
 
 @Component({
-  selector: 'app-target-premium',
+  selector: 'sales-auto-target-premium',
   templateUrl: 'target-premium.component.html',
   styleUrls: ['target-premium.component.css']
 })
 export class TargetPremiumComponent {
 
-  constructor(private navService: AutoSalesNavService) {
-  }
+  targetPremium: TargetPremium;
 
+  constructor(@Inject(TargetPremium) targetPremium, @Inject(AutoSalesNavService)private navService) {
+    this.targetPremium = targetPremium;
+  }
 
   /**
    *
@@ -19,21 +22,8 @@ export class TargetPremiumComponent {
    */
 
   onNextClicked() {
-    this.navService.getNextView();
+    this.navService.goToView(1);
   }
 
-
-  /**
-   *
-   * Handle Slider Value Changed
-   *
-   */
-
-  sliderValue: number;
-
-  onChanged(event) {
-    this.sliderValue = event.value;
-    console.log("Changed To: " + this.sliderValue);
-  }
 
 }

@@ -1,28 +1,31 @@
 import {Injectable} from '@angular/core';
 import {NavAutoView} from "../../shared/nav-auto-view";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AutoSalesNavService {
 
-  private currentView: NavAutoView;
+  private currentViewIndex: number;
   private viewList: NavAutoView[];
-  private view: string = "sales";
-  private subView: string = "auto";
+  private view: string = "/sales";
+  private subView: string = "/auto";
 
-  constructor() {
+  constructor(private router: Router) {
 
-    // On Initialization, Create This Object TO Be Available Globally
+    // On Initialization, Create This Object To Be Available Globally
     this.viewList = [
 
-      new NavAutoView(0, 0, 0, [this.view, this.subView, 'target-premium'], false),
-      new NavAutoView(1, 1, 0, [this.view, this.subView, 'personal-info'], false),
-      new NavAutoView(2, 1, 1, [this.view, this.subView, 'personal-info', 'name'], false),
-      new NavAutoView(3, 1, 2, [this.view, this.subView, 'personal-info', 'address'], false),
-      new NavAutoView(4, 1, 3, [this.view, this.subView, 'personal-info', 'history'], false),
-      new NavAutoView(5, 2, 0, [this.view, this.subView, 'vehicles'], false),
-      new NavAutoView(6, 3, 0, [this.view, this.subView, 'quote-summary'], false)
+      new NavAutoView(0, this.view + this.subView + '/target-premium', false),
+      new NavAutoView(1, this.view + this.subView + '/personal-info' + '/name', false),
+      new NavAutoView(2, this.view + this.subView + '/personal-info' + '/address', false),
+      new NavAutoView(3, this.view + this.subView + '/personal-info' + '/history', false),
+      new NavAutoView(4, this.view + this.subView + '/vehicles', false),
+      new NavAutoView(5, this.view + this.subView + '/quote-summary', false)
 
     ];
+
+    // Set Current View Index To 0
+    this.currentViewIndex = 0;
 
   }
 
@@ -49,8 +52,18 @@ export class AutoSalesNavService {
   createNewQuote() {
 
     console.log("Creating New Flow");
-    this.setCurrentView(this.viewList[0]);
+    this.currentViewIndex = 0;
 
+  }
+
+  /**
+   *
+   * Go To View
+   *
+   */
+
+  goToView(viewIndex: number) {
+    this.router.navigate([this.viewList[viewIndex].routerLink]);
   }
 
   /**
@@ -59,10 +72,10 @@ export class AutoSalesNavService {
    *
    */
 
-  getNextView(){
-    console.log("Getting Next View from "+this.getCurrentView().order);
-    console.log("Returning "+(this.getCurrentView().order+1));
-    return this.viewList[(this.getCurrentView().order+1)];
+  goToNextView() {
+
+    //TODO ensure the navigation is completed by returning boolean
+    this.router.navigate([this.viewList[(this.currentViewIndex += 1)].routerLink]);
   }
 
   /**
@@ -71,34 +84,8 @@ export class AutoSalesNavService {
    *
    */
 
-  getPreviousView(){
-    console.log("Getting Previous View from "+this.getCurrentView().order);
-    console.log("Returning "+(this.getCurrentView().order-1));
-    return this.viewList[(this.getCurrentView().order-1)];
+  goToPreviousView() {
+    this.router.navigate([this.viewList[(this.currentViewIndex -= 1)].routerLink]);
   }
-
-  /**
-   *
-   * Set Current View
-   *
-   */
-
-  setCurrentView(view: NavAutoView) {
-    console.log("Setting Current View: ModuleIndex:" + view.moduleIndex + " SubModuleIndex: " + view.subModuleIndex);
-    this.currentView = view;
-  }
-
-
-  /**
-   *
-   * Get Current View
-   *
-   */
-
-  getCurrentView() {
-    console.log("Getting Last View: OrderIndex:" + this.currentView);
-    return this.currentView;
-  }
-
 
 }

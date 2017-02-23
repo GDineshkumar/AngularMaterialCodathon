@@ -1,12 +1,17 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Inject} from '@angular/core';
 import {Vehicle} from "./vehicle";
+import {AutoSalesNavService} from "../auto-sales-nav.service";
 
 @Component({
-  selector: 'app-vehicles',
+  selector: 'sales-auto-vehicles',
   templateUrl: 'vehicles.component.html',
   styleUrls: ['vehicles.component.css']
 })
 export class VehiclesComponent {
+
+  constructor(@Inject(AutoSalesNavService)private navService){
+
+  }
 
   /**
    *
@@ -33,6 +38,26 @@ export class VehiclesComponent {
 
   onAddVehicle(vehicle) {
     console.log("Clicked: " + vehicle.vin);
+  }
+
+  /**
+   *
+   * Nav Next Service
+   *
+   */
+
+  onNextClicked() {
+    this.navService.goToView(5);
+  }
+
+  /**
+   *
+   * Nav Back Service
+   *
+   */
+
+  onBackClicked() {
+    this.navService.goToView(3);
   }
 
 }

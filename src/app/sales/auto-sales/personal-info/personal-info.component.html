@@ -7,7 +7,20 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 col-md-6 col-md-offset-3">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+
+ <!--     <md-tab-group>
+        <md-tab label="Name">
+          <sales-auto-personal-info-name></sales-auto-personal-info-name>
+        </md-tab>
+        <md-tab label="Address">
+          <sales-auto-personal-info-address></sales-auto-personal-info-address>
+        </md-tab>
+        <md-tab label="History">
+          <sales-auto-personal-info-history></sales-auto-personal-info-history>
+        </md-tab>
+      </md-tab-group>-->
+
       <nav md-tab-nav-bar>
         <a md-tab-link
            *ngFor="let tab of personalInfoTabData"
@@ -21,7 +34,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 col-md-6 col-md-offset-3">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
       <router-outlet></router-outlet>
     </div>
   </div>

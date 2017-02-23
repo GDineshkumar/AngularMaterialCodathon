@@ -6,16 +6,22 @@ import {VehiclesComponent} from "./vehicles/vehicles.component";
 import {RouterModule} from "@angular/router";
 import {AutoSalesComponent} from "./auto-sales.component";
 import {MaterialModule} from "@angular/material";
-import {PersonalInfoModule} from "./personal-info/personal-info.module";
 import {AutoSalesNavService} from "./auto-sales-nav.service";
 import {AutoDataService} from "./autoDataService";
 import {Auto} from "./auto";
+import {PersonalInfoModule} from "./personal-info/personal-info.module";
+import {PersonalInfo} from "./personal-info/personal-info";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {TargetPremium} from "./target-premium/target-premium";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
+    HttpModule,
+    FormsModule,
     PersonalInfoModule
   ],
   declarations: [
@@ -24,7 +30,7 @@ import {Auto} from "./auto";
     QuoteSummaryComponent,
     VehiclesComponent
   ],
-  providers:[Auto, AutoDataService, AutoSalesNavService]
+  providers:[Auto, AutoDataService, AutoSalesNavService, PersonalInfo, TargetPremium]
 })
 export class AutoSalesModule {
 }

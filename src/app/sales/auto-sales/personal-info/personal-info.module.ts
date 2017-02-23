@@ -6,11 +6,11 @@ import {PersonalInfoNameComponent} from "./personal-info-name/personal-info-name
 import {RouterModule} from "@angular/router";
 import {PersonalInfoComponent} from "./personal-info.component";
 import {MaterialModule} from "@angular/material";
-import {Personalinfo} from "./personInfo";
 import {Auto} from "../auto";
 import {AutoDataService} from "../autoDataService";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
+import {PersonalInfo} from "./personal-info";
 
 
 @NgModule({
@@ -27,7 +27,7 @@ import {HttpModule} from "@angular/http";
     PersonalInfoAddressComponent,
     PersonalInfoHistoryComponent
   ],
-  providers:[Auto, AutoDataService, Personalinfo]
+  providers:[Auto, AutoDataService, PersonalInfo]
 })
 export class PersonalInfoModule {
 }

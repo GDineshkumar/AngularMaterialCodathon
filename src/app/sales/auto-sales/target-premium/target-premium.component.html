@@ -7,7 +7,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 col-md-6 col-md-offset-3">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
 
       <!-- Target Premium Card -->
       <md-card>
@@ -15,20 +15,22 @@
           <div class="container">
             <div class="row">
               <!-- Slider For User to Select Premium -->
-              <md-slider class="slider" (change)="onChanged($event)"></md-slider>
+              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
             </div>
+            <!--(change)="onChanged($event)"-->
 
             <div class="row">
               <h1>
-                ${{sliderValue}}
+                ${{targetPremium.premiumValue}}
               </h1>
             </div>
 
           </div>
 
         </md-card-content>
-        <md-card-actions >
-          <button (click)="onNextClicked()" md-button>NEXT</button>
+        <md-card-actions>
+          <button md-raised-button (click)="onBackClicked()">BACK</button>
+          <button md-raised-button color="primary" style="float: right;" (click)="onNextClicked()">NEXT</button>
         </md-card-actions>
       </md-card>
 

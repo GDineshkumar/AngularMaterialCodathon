@@ -1,9 +1,8 @@
+import {Injectable} from "@angular/core";
+
+@Injectable()
 export class TargetPremium {
 
-  targetPremium: number;
-
-  constructor(targetPremium: number) {
-    this.targetPremium = targetPremium;
-  }
+  premiumValue: number;
 
 }

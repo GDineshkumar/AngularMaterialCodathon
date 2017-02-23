@@ -5,22 +5,27 @@
 
     <!-- STREET INPUT -->
     <md-input-container>
-      <input mdInput placeholder="Street">
+      <input mdInput [(ngModel)]="personalInfo.street" placeholder="Street">
     </md-input-container>
 
     <!-- CITY INPUT -->
     <md-input-container>
-      <input  mdInput placeholder="City" >
+      <input  mdInput [(ngModel)]="personalInfo.city" placeholder="City" >
+    </md-input-container>
+
+    <!-- STATE INPUT -->
+    <md-input-container>
+      <input mdInput [(ngModel)]="personalInfo.state" placeholder="State" >
     </md-input-container>
 
     <!-- ZIP INPUT -->
     <md-input-container>
-      <input  mdInput placeholder="Zip">
+      <input mdInput [(ngModel)]="personalInfo.zip" placeholder="Zip">
     </md-input-container>
 
   </md-card-content>
   <md-card-actions >
-    <button md-button>BACK</button>
-    <button md-button style="float: right;">NEXT</button>
+    <button md-raised-button (click)="onBackClicked()">BACK</button>
+    <button md-raised-button color="primary" style="float: right;" (click)="onNextClicked()">NEXT</button>
   </md-card-actions>
 </md-card>

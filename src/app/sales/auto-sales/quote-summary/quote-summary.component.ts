@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-quote-summary',
+  selector: 'sales-auto-quote-summary',
   templateUrl: 'quote-summary.component.html',
   styleUrls: ['quote-summary.component.css']
 })

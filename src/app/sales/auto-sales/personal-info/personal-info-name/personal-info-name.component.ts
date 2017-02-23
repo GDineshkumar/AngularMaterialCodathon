@@ -1,20 +1,38 @@
-import {Personalinfo} from '../personInfo'
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {AutoSalesNavService} from "../../auto-sales-nav.service";
+import {PersonalInfo} from "../personal-info";
 
 @Component({
-  selector: 'app-personal-info-name',
+  selector: 'sales-auto-personal-info-name',
   templateUrl: './personal-info-name.component.html',
   styles: []
 })
-export class PersonalInfoNameComponent implements OnInit {
+export class PersonalInfoNameComponent {
 
-  personalinfo: Personalinfo;
+  personalInfo: PersonalInfo;
 
-  constructor(personalinfo: Personalinfo) {
-    this.personalinfo = personalinfo;
+  constructor(@Inject(PersonalInfo) personalInfo, @Inject(AutoSalesNavService) private navService) {
+    this.personalInfo = personalInfo;
   }
 
-  ngOnInit() {
+  /**
+   *
+   * Nav Next Service
+   *
+   */
+
+  onNextClicked() {
+    this.navService.goToView(2);
+  }
+
+  /**
+   *
+   * Nav Back Service
+   *
+   */
+
+  onBackClicked() {
+    this.navService.goToView(0);
   }
 
 }

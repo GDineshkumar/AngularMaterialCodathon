@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
-export class Personalinfo {
+export class PersonalInfo {
 
   firstName: string;
   lastName: string;
-  dateOfBirth: string;
   street: string;
-  aptOrSuite: string;
   state: string;
   city: string;
-  zipCode: number;
-
+  zip: string;
+  numAccidents: number;
 
 }
 
