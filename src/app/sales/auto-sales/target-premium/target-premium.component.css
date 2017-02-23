@@ -5,6 +5,7 @@
 .slider {
   width: 500px;
   cursor:pointer;
+  color: #212121;
 }
 
 .button-right{

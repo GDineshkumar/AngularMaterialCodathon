@@ -19,7 +19,7 @@ export class LandingComponent implements OnInit {
   }
 
   onClicked() {
-    this.navService.goToView(1);
+    this.navService.goToView(0);
   }
 
 }

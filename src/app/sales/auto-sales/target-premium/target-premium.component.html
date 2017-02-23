@@ -15,26 +15,33 @@
         <md-card-content>
           <div class="container">
             <div class="row">
-              <!-- Slider For User to Select Premium -->
-              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
-            </div>
-            <div class="row">
-              <br><br><br>
-              <md-card-subtitle>Medical Coverage</md-card-subtitle>
-              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
-              <br>
-              <md-card-subtitle>Property Coverage</md-card-subtitle>
-              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
-              <br>
-              <md-card-subtitle>Deductible</md-card-subtitle>
-              <md-slider class="slider" [(ngModel)]="targetPremium.premiumValue"></md-slider>
-            </div>
-            <!--(change)="onChanged($event)"-->
-
-            <div class="row">
               <h1>
                 ${{targetPremium.premiumValue}}<md-card-subtitle>per month</md-card-subtitle>
               </h1>
+            </div>
+            <div class="row">
+
+              <!-- ACTIVE SLIDER FOR USER TO SELECT TARGET PREMIUM -->
+              <md-slider class="slider" [min]="targetPremium.premiumValueMin" [max]="targetPremium.premiumValueMax" [(ngModel)]="targetPremium.premiumValue" (ngModelChange)="onChange($event)"></md-slider>
+
+            </div>
+            <div class="row">
+
+              <br><br>
+
+              <!-- MEDICAL COVERAGE SLIDER -->
+              <md-card-subtitle>Medical Coverage <md-card-title>{{"$"+targetPremium.medicalCoverageValue}} </md-card-title></md-card-subtitle>
+              <md-slider class="slider" [min]="targetPremium.medicalCoverageValueMin" [max]="targetPremium.medicalCoverageValueMax" [(ngModel)]="targetPremium.medicalCoverageValue"></md-slider>
+              <br>
+
+              <!-- PROPERTY COVERAGE SLIDER -->
+              <md-card-subtitle>Property Coverage <md-card-title>{{"$"+targetPremium.propertyCoverageValue}}</md-card-title></md-card-subtitle>
+              <md-slider class="slider" [min]="targetPremium.propertyCoverageValueMin" [max]="targetPremium.propertyCoverageValueMax" [(ngModel)]="targetPremium.propertyCoverageValue"></md-slider>
+              <br>
+
+              <!-- DEDUCTIBLE AMOUNT SLIDER -->
+              <md-card-subtitle>Deductible <md-card-title>{{"$"+targetPremium.deductibleValue}}</md-card-title></md-card-subtitle>
+              <md-slider class="slider" [invert]="true" [min]="targetPremium.deductibleValueMin" [max]="targetPremium.deductibleValueMax" [(ngModel)]="targetPremium.deductibleValue"></md-slider>
             </div>
 
           </div>
