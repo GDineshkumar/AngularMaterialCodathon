@@ -12,7 +12,6 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {PersonalInfo} from "./personal-info";
 
-
 @NgModule({
   imports: [
     CommonModule,
