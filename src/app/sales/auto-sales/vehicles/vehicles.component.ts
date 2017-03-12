@@ -1,7 +1,7 @@
-import {Component, Input, Inject} from '@angular/core';
-import {Vehicle} from "./vehicle";
-import {AutoSalesNavService} from "../auto-sales-nav.service";
-import {TargetPremium} from "../target-premium/target-premium";
+import { Component, Input, Inject } from '@angular/core';
+import { Vehicle } from './vehicle';
+import { AutoSalesNavService } from '../auto-sales-nav.service';
+import { TargetPremium } from '../target-premium/target-premium';
 
 @Component({
   selector: 'sales-auto-vehicles',
@@ -10,9 +10,18 @@ import {TargetPremium} from "../target-premium/target-premium";
 })
 export class VehiclesComponent {
 
-  targetPremium:TargetPremium;
+  targetPremium: TargetPremium;
+  selectedVehicleId: number;
 
-  constructor(@Inject(TargetPremium) targetPremium, @Inject(AutoSalesNavService)private navService){
+  @Input() vehicles: Vehicle[] = [
+    new Vehicle('Volkswagen', 'GTI', '1995', 'VWW64634HKJHK987', 30),
+    new Vehicle('Honda', 'Civic', '2001', 'HDW64634HKJHK987', 20),
+    new Vehicle('Ford', 'Tundra', '2010', 'FDW64634HKJHK987', 25),
+    new Vehicle('Toyota', 'Highlander', '2004', 'TYW64634HKJHK987', 19)
+
+  ];
+
+  constructor( @Inject(TargetPremium) targetPremium, @Inject(AutoSalesNavService) private navService) {
     this.targetPremium = targetPremium;
   }
 
@@ -25,7 +34,7 @@ export class VehiclesComponent {
    */
 
   numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   /**
@@ -33,15 +42,6 @@ export class VehiclesComponent {
    * Create Mock Vehicle Data
    *
    */
-
-  @Input() vehicles: Vehicle[] = [
-
-    new Vehicle("Volkswagen", "GTI", "1995", "VWW64634HKJHK987", 30),
-    new Vehicle("Honda", "Civic", "2001", "HDW64634HKJHK987", 20),
-    new Vehicle("Ford", "Tundra", "2010", "FDW64634HKJHK987", 25),
-    new Vehicle("Toyota", "Highlander", "2004", "TYW64634HKJHK987", 19)
-
-  ];
 
   /**
    *
@@ -51,8 +51,9 @@ export class VehiclesComponent {
    *
    */
 
-  onAddVehicle(vehicle) {
-    console.log("Clicked: " + vehicle.vin);
+  onSelectedVehicle(vehicle, i: number) {
+     console.log("onclicked event");
+    this.selectedVehicleId = i;
   }
 
   /**
@@ -75,4 +76,14 @@ export class VehiclesComponent {
     this.navService.goToView(3);
   }
 
+  onClick(i: number) {
+    console.log("class changer");
+    return this.selectedVehicleId === i ? true : false;
+  }
+  
+  
+  deleteVehicle(i: number){
+    console.log("delete");
+    delete this.vehicles[i];
+  }
 }

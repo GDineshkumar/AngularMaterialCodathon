@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
-import {NavAutoView} from "../../shared/nav-auto-view";
-import {Router} from "@angular/router";
+import {NavAutoView} from '../../shared/nav-auto-view';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class AutoSalesNavService {
 
   private currentViewIndex: number;
   private viewList: NavAutoView[];
-  private view: string = "/sales";
-  private subView: string = "/auto";
+  private view: string = '/sales';
+  private subView: string = '/auto';
 
   constructor(private router: Router) {
 
@@ -51,7 +51,7 @@ export class AutoSalesNavService {
 
   createNewQuote() {
 
-    console.log("Creating New Flow");
+    console.log('Creating New Flow');
     this.currentViewIndex = 0;
 
   }
@@ -74,7 +74,7 @@ export class AutoSalesNavService {
 
   goToNextView() {
 
-    //TODO ensure the navigation is completed by returning boolean
+    // TODO ensure the navigation is completed by returning boolean
     this.router.navigate([this.viewList[(this.currentViewIndex += 1)].routerLink]);
   }
 

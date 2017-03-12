@@ -24,16 +24,19 @@
        Select vehicles to add to your policy
      </md-card-subtitle>
    </div>-->
-
+<md-card>
   <div class="row">
     <div class="col-sm-12 col-md-4 col-md-offset-4">
 
       <md-list>
-        <md-list-item *ngFor="let vehicle of vehicles" (click)="onAddVehicle(vehicle)" class="list-item">
+        <md-list-item *ngFor="let vehicle of vehicles let i = index"  [ngClass]= "{changeColor:onClick(i)}"  (click)="onSelectedVehicle(vehicle, i)" class="list-item">
+         
+         <md-card-xl-image ></md-card-xl-image>
           <md-card-title md-line> {{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</md-card-title>
           <md-card-subtitle md-line>
             <span> +${{vehicle.premium}} to Premium</span>
           </md-card-subtitle>
+          <span class="glyphicon glyphicon-trash"  (click)="deleteVehicle(i)"></span>
         </md-list-item>
 
       </md-list>
@@ -51,5 +54,5 @@
       <button md-raised-button color="primary" style="float: right;" (click)="onNextClicked()">NEXT</button>
     </div>
   </div>
-
+</md-card>
 </div>

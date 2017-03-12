@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {Vehicle} from "./vehicle";
+import {Injectable} from '@angular/core';
+import {Vehicle} from './vehicle';
 
 @Injectable()
 export class VehicleList {
 
-  vehicleList:Array<Vehicle>;
+  vehicleList: Array<Vehicle>;
 
 }

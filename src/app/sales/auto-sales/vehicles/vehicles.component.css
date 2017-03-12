@@ -23,3 +23,8 @@
   cursor: pointer;
   background-color: #F5F5F5;
 }
+
+.changeColor {
+	color:blue;
+	background: #c0c0c0;
+}
