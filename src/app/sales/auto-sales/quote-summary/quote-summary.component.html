@@ -166,3 +166,114 @@
 	</div>
 	<!-- /PRICING-TABLE -->
 </div>
+<div class="wrapper">
+  <!-- PRICING-TABLE CONTAINER -->
+  <div class="pricing-table group">
+
+    <!-- PERSONAL -->
+    <div class="block personal fl">
+      <h2 class="title">Budget Coverage</h2>
+      <!-- CONTENT -->
+      <div class="content">
+        <p class="price">
+          <sup>$</sup> <span>{{numberWithCommas(targetPremium.premiumValue/2)}}</span> <sub>/mo</sub>
+        </p>
+      </div>
+
+      <ul class="features">
+        <li>{{'$'+numberWithCommas(targetPremium.medicalCoverageValue/2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 30%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.propertyCoverageValue/2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 30%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.deductibleValue/2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 30%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="block professional fl">
+      <h2 class="title">Your Custom Quote</h2>
+
+      <div class="content">
+        <p class="price">
+          <sup>$</sup> <span>{{numberWithCommas(targetPremium.premiumValue)}}</span> <sub>/mo</sub>
+        </p>
+      </div>
+
+      <ul class="features">
+        <li>{{'$'+numberWithCommas(targetPremium.medicalCoverageValue)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 55%;"
+                 class="progress-bar progress-bar-success" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.propertyCoverageValue)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 75%;"
+                 class="progress-bar progress-bar-success" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.deductibleValue)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 60%;"
+                 class="progress-bar progress-bar-success" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="block business fl">
+      <h2 class="title">Stronger Coverage</h2>
+
+      <div class="content">
+        <p class="price">
+          <sup>$</sup> <span>{{numberWithCommas(targetPremium.premiumValue*2)}}</span> <sub>/mo</sub>
+        </p>
+      </div>
+
+      <ul class="features">
+        <li>{{'$'+numberWithCommas(targetPremium.medicalCoverageValue*2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 90%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.propertyCoverageValue*2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 85%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+        <li>{{'$'+numberWithCommas(targetPremium.deductibleValue*2)}}
+          <div class="progress">
+            <div data-percentage="0%" style="width: 87%;"
+                 class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
